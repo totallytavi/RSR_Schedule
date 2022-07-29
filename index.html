@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Ro-Scale Railway Schedule</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="style.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+  <h1>Ro-Scale Railway Schedule</h1>
+  <p>This is a small fan-made project by Tavi#0001. Simply load one of the routes that I've imported and it'll calculate the best times and display the starting, ending, and stops. It'll also visualise it for you in case you're a visual learner.</p>
+  <div style="display: flex; align-content: center; justify-content: center;">
+    <select name="route" id="route-select">
+      <option value="" disabled="true" selected>Select a route to load</option>
+    </select>
+  </div>
+  <br>
+  <br>
+  <div id="tables" style="display: flex; justify-content: space-evenly;">
+    <table class="table" id="route-table">
+      <thead class="thead">
+        <tr>
+          <th colspan="3">No Route</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="td"><b>#</b></td>
+          <td class="td"><b>Station</b></td>
+          <td class="td"><b>Time</b></td>
+        </tr>
+      </tbody>
+    </table>
+    <table class="table" id="schedule-table" style="border-collapse: collapse;" hidden>
+      <thead class="thead">
+        <tr>
+          <th colspan="3">No Route</th>
+        </tr>
+      </thead>
+      <tbody class="active-stop">
+        <tr hidden>
+          <td class="td"><b>*</b></td>
+          <td class="td"><b>Time</b></td>
+          <td class="td"><b>Station</b></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <br>
+  <br>
+  <hr>
+  <label for="route-db">Route DB URL:</label>
+  <input type="text" id="route-db" value="https://tavis.page/routes"></input>
+  <button onclick="loadDb()">Load database</button>
+  <p id="route-db-status">Using default (<a href="https://tavis.page/routes">https://tavis.page/routes</a>)</p>
+  <script src="./script.js"></script>
+</body>
+</html>
