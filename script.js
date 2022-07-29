@@ -143,10 +143,10 @@ function loadRoute(route, value) {
     }
     if(next) {
       const stationTime = new Date(next.getAttribute("epoch"));
-      if(new Date().getMinutes() === stationTime.getMinutes()) {
+      if(stationTime.getHours() === new Date().getHours() && stationTime.getMinutes() === new Date().getMinutes() && stationTime.getDate() === new Date().getDate()) {
         next.classList.add("on-time");
         next.children[0].classList.add("on-time");
-      } else if(new Date().getMinutes() < stationTime.getMinutes()) {
+      } else if(new Date().getDate() < stationTime.getDate()) {
         next.classList.add("early");
         next.children[0].classList.add("early");
       } else {
@@ -177,10 +177,10 @@ function loadRoute(route, value) {
     }
     if(prev) {
       const stationTime = new Date(prev.getAttribute("epoch"));
-      if(new Date().getMinutes() === stationTime.getMinutes()) {
+      if(stationTime.getHours() === new Date().getHours() && stationTime.getMinutes() === new Date().getMinutes() && stationTime.getDate() === new Date().getDate()) {
         prev.classList.add("on-time");
         prev.children[0].classList.add("on-time");
-      } else if(new Date().getMinutes() < stationTime.getMinutes()) {
+      } else if(new Date().getDate() < stationTime.getDate()) {
         prev.classList.add("early");
         prev.children[0].classList.add("early");
       } else {
@@ -337,7 +337,7 @@ function checkTime() {
   const lateness = document.getElementById("lateness");
   lateness.classList.add("active-stop");
   // Check if the time is on time
-  if(now.getMinutes() === stationTime.getMinutes()) {
+  if(stationTime.getHours() === now.getHours() && stationTime.getMinutes() === now.getMinutes() && stationTime.getDate() === now.getDate()) {
     // On time
     active[0].classList.remove("early", "late");
     active[0].children[0].classList.remove("early", "late");
