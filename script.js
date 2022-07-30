@@ -330,7 +330,7 @@ function checkTime() {
   const diff = Math.floor((now.getTime() - stationTime.getTime()) / 1000);
   let minutes = Math.round(Math.abs(diff) / 60);
   const seconds = Math.abs(diff % 60);
-  if(seconds > 30)
+  if(seconds >= 30)
     minutes = minutes - 1;
   const time = `Next Stop: ${active[0].children[1].innerText} | <span id="lateness">${setPrefix(diff, minutes, seconds)}${("00"+minutes).slice(-2)}:${("00"+seconds).slice(-2)}</span>`;
   text.innerHTML = time;
