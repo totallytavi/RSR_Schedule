@@ -1,0 +1,66 @@
+{
+  "CR001": {
+    "stations": [
+      "Brismond Central",
+      "Brismond Bridge",
+      "Nembrington",
+      "Wellow",
+      "Penwick East",
+      "Penwick Central",
+      "Penwick West",
+      "Woodleyon",
+      "Lichfield",
+      "Hepperton Outside",
+      "Hepperton",
+      "Lydford North Junction",
+      "Lydford Central"
+    ],
+    "times": [
+      0,
+      120000,
+      300000,
+      420000,
+      600000,
+      720000,
+      840000,
+      960000,
+      1140000,
+      1260000,
+      1380000,
+      1500000,
+      1620000
+    ]
+  },
+  "CR001_R": {
+    "stations": [
+      "Lydford Central",
+      "Lydford North Junction",
+      "Hepperton",
+      "Hepperton Outside",
+      "Lichfield",
+      "Woodleyon", 
+      "Penwick West", 
+      "Penwick Central", 
+      "Penwick East", 
+      "Wellow", 
+      "Nembrington",
+      "Brismond Bridge",
+      "Brismond Central"
+    ],
+    "times": [
+      0,
+      120000,
+      240000,
+      360000,
+      480000,
+      660000,
+      780000,
+      900000,
+      1020000,
+      1200000,
+      1320000,
+      1500000,
+      1620000
+    ]
+  }
+}
