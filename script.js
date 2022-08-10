@@ -1,4 +1,5 @@
 let routes;
+let minimalMode = false;
 var timeInterval;
 
 window.onload = async function() {
@@ -83,6 +84,9 @@ function loadRoute(route, value) {
   // Date math
   let now = Math.floor(Date.now());
   while(new Date(now).getMinutes() % 5 > 0) now += 1000;
+  // Anything 2 minutes or lower to now, set it to the next 5 minute interval
+  if(now - Date.now() < 120000)
+    now += (5 - (new Date(now).getMinutes() % 5)) * 60 * 1000;
   now -= new Date(now).getSeconds() * 1000;
   for(const stop in route.stations) {
     const row = document.createElement("tr");
@@ -100,6 +104,8 @@ function loadRoute(route, value) {
     const stopTime = document.createElement("td");
     stopTime.classList.add("schedule-cells");
     stopName.innerText = route.stations[stop];
+    if(stop > 0)
+      now = new Date(schedule.children[parseInt(stop) + 1].getAttribute("epoch")).getTime();
     const time = new Date(now + parseInt(route.times[stop]));
     row.setAttribute("epoch", time);
     const hours = time.getHours();
@@ -369,4 +375,26 @@ function setPrefix(diff, minutes, seconds) {
   if(minutes === 0 && seconds === 0 && diff <= 0) return "";
   if(diff < 0) return "-";
   return "+";
+}
+
+// eslint-disable-next-line no-unused-vars
+function minimal() {
+  const elements = [];
+  for(const element of document.getElementsByTagName("p")) elements.push(element);
+  for(const element of document.getElementsByTagName("h1")) elements.push(element);
+  for(const element of document.getElementsByTagName("label")) elements.push(element);
+  for(const element of document.getElementsByTagName("br")) elements.push(element);
+  for(const element of document.getElementsByTagName("hr")) elements.push(element);
+  elements.push(document.getElementById("load-db"));
+  elements.push(document.getElementById("route-db"));
+  elements.push(document.getElementById("route-db-status"));
+  elements.push(document.getElementById("route-select"));
+  elements.push(document.getElementById("route-table"));
+  if(!minimalMode) {
+    elements.forEach(e => e.hidden = true);
+    minimalMode = true;
+  } else {
+    elements.forEach(e => e.hidden = false);
+    minimalMode = false;
+  }
 }

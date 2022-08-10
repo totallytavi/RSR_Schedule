@@ -32,3 +32,15 @@ body {
 .active-stop {
   color: orange;
 }
+
+#minimal-mode {
+  position: fixed;
+  bottom: 1.25%;
+  left: 1.25%;
+  height: 5%;
+  width: auto;
+  background-color: green;
+  border: none;
+  padding: 5px 5px;
+  color: white;
+}

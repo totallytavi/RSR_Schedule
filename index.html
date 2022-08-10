@@ -55,8 +55,10 @@
   <hr>
   <label for="route-db">Route DB URL:</label>
   <input type="text" id="route-db" value="https://tavis.page/routes"></input>
-  <button onclick="loadDb()">Load database</button>
+  <button onclick="loadDb()" id="load-db">Load database</button>
   <p id="route-db-status">Using default (<a href="https://tavis.page/routes">https://tavis.page/routes</a>)</p>
+  <br>
+  <button id="minimal-mode" onclick="minimal()">Toggle Minimal Mode</button>
   <script src="./script.js"></script>
 </body>
 </html>
