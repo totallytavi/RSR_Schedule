@@ -3,6 +3,9 @@
   "assignees": [
     "coder-tavi"
   ],
+  "reviewers": [
+    "coder-tavi"
+  ],
   "automerge": true,
   "automergeType": "pr",
   "automergeStrategy": "squash",
@@ -16,8 +19,5 @@
       "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
       "automerge": true
     }
-  ],
-  "reviewers": [
-    "coder-tavi"
   ]
 }
