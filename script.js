@@ -271,7 +271,7 @@ function createDepot() {
   return canvas;
 }
 
-// eslint-disable-next-line no-unused-vars
+// eslint-disable-next-line no-unused-vars, @typescript-eslint/no-unused-vars
 function loadDb() {
   // Get the database URL from route-db
   const dbUrl = document.getElementById("route-db").value;
@@ -377,7 +377,7 @@ function setPrefix(diff, minutes, seconds) {
   return "+";
 }
 
-// eslint-disable-next-line no-unused-vars
+// eslint-disable-next-line no-unused-vars, @typescript-eslint/no-unused-vars
 function minimal() {
   const elements = [];
   for(const element of document.getElementsByTagName("p")) elements.push(element);
